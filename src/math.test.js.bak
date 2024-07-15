@@ -1,0 +1,29 @@
+const { add, minus, multiply, divide } = require('./math.js')
+function describe(message, testSuite) {
+	testSuite()
+}
+
+const it = (test = function (message, testCase) {
+	testCase()
+})
+
+function assert(condition, message) {
+	if (!condition) {
+		throw new Error(message)
+	}
+}
+
+describe('测试add', () => {
+	it('测试2+4是否等于6', () => {
+		assert(add(2, 4) === 7, '2+4!=6')
+	})
+
+	it('测试3+3是否等于6', () => {
+		assert(add(3, 3) === 6, '3+3!=6')
+	})
+})
+describe('测试minus', () => {
+	it('测试4-2是否等于2', () => {
+		assert(minus(4, 2) === 2, '4-2!=2')
+	})
+})
